@@ -1,0 +1,21 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defualtZone : http://${eureka.instance.hostname}:${server.port}/eureka/
+
+server:
+  port: 8761
+
+### read configuration from config server
+
+# we put optional because of if eureka can not find config file system will stop
+# therefore add config as the optional
+spring:
+  application:
+    name: discovery
+
+
